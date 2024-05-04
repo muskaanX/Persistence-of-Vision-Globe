@@ -6,7 +6,7 @@ This project was completed as a deliverable for an Independent Study Module on R
 
 The final build is a circular base with an 8mm rod going through it, mounted onto a DC motor, rotating along with the motor while the addressable RGB LED Strips are controlled by an ESP32. There are 8 magnets attached below the circle, with a hall effect sensor present on the circle to detect the positional angle of the circle while in rotation to modify the pattern. The link to the demo run for the same is here.
 
-Parts Used:
+### Parts Used:
 1. 8mm Aluminium Rod
 2. High-Densite RGB Strip Light (Addressable)
 3. 8 Neodym Magnets (10mm x 2mm)
@@ -23,7 +23,7 @@ Parts Used:
 9. 12V 4500mAh LiPo Battery
 10. Hall Effect Sensor
 
-Important Points about the Build:
+### Important Points about the Build:
 1. Radius of Circle = 15 cm
 2. 64 LEDs on each side
 
