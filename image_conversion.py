@@ -17,4 +17,4 @@ def prepare_image(image_path, output_width, output_height):
   return np.array(data)
 
 image_data = prepare_image('globe_pov.jpg', 360, 64)  # 360 degrees and 64 LEDs per side
-np.savetxt('image_data.csv', image_data, delimiter=',', fmt='%d')
+np.savetxt('image_data.csv', image_data, delimiter=',', fmt='%d') # save data as csv to be read further
