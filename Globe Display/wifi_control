@@ -1,0 +1,22 @@
+#ifndef WIFI_CONTROL_H
+#define WIFI_CONTROL_H
+
+#include <WiFi.h>
+
+const char* ssid = "YOUR_SSID";
+const char* password = "YOUR_PASSWORD";
+
+void setupWiFi() {
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+    Serial.println("WiFi connected");
+}
+
+void handleClient() {
+    // placeholder for handling WiFi clients (e.g., for OTA updates or control)
+}
+
+#endif // WIFI_CONTROL_H
