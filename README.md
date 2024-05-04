@@ -22,7 +22,7 @@ The final build is a circular base with an 8mm rod going through it, mounted ont
 4. 12V DC Motor (2000 RPM)
 5. Ball Bearing
 6. Wood for Base and Stand
-7. 3D Prints (Link to CAD and STL Files) <br>
+7. 3D Prints (Link to CAD and [STL Files]) <br>
   a. 2 x Semi Circles <br>
   b. 1 Rotor Clasp <br>
   c. 1 x Motor Mount <br>
@@ -31,6 +31,8 @@ The final build is a circular base with an 8mm rod going through it, mounted ont
 8. LM2596 DC-DC Buck Converter
 9. 12V 4500mAh LiPo Battery
 10. Hall Effect Sensor
+
+[STL Files]: https://drive.google.com/drive/folders/1sWfZnWFb5knWOkBUvoM1cNdkBBITKUgz?usp=drive_link
 
 ### Important Points about the Build:
 1. Radius of Circle = 15 cm
