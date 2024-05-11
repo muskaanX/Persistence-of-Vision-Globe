@@ -38,6 +38,8 @@ The final build is a circular base with an 8mm rod going through it, mounted ont
 1. Radius of Circle = 15 cm
 2. 64 LEDs on each side
 
-There were several issues encountered along the way due to motor failure and resultantly, the motor was replaced with a NEMA17 Stepper Motor connected to a breadboard circuit with a A4988 Stepper Driver, connected to an Arduino UNO and a power supply.
+There were several issues encountered along the way due to motor failure and resultantly, the motor was replaced with a NEMA17 Stepper Motor connected to a breadboard circuit with a A4988 Stepper Driver, connected to an Arduino UNO and a power supply. Video for the first demo can be found [here].
+
+[here]: https://www.youtube.com/watch?v=s0MQgqX_jck
 
 [Images of Final Build]
