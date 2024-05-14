@@ -1,23 +1,35 @@
-import csv
+from PIL import Image
+import pandas as pd
 
-def convert_to_crgb_array(csv_filename):
-    with open(csv_filename, 'r') as file:
-        csv_reader = csv.reader(file)
-        all_rows = list(csv_reader)  # Read all data
+# Function to extract RGB values and save to CSV
+def save_rgb_to_csv(image_path, csv_path):
 
-    output = "CRGB image_data[360][64] = {\n"
-    for row in all_rows:
-        output += "{"
-        for color in row:
-            r = (int(color) >> 16) & 0xFF
-            g = (int(color) >> 8) & 0xFF
-            b = int(color) & 0xFF
-            output += f"CRGB(0x{r:02X}, 0x{g:02X}, 0x{b:02X}), "
-        output = output[:-2] + "},\n"  # Remove last comma and add row end
-    output += "};"
-    
-    with open('image_rgb_data.txt', 'w') as out_file:
-        out_file.write(output)  # Write to an output file
+    image = Image.open(image_path)
+    image = image.convert("RGB") # For RGB conversion
 
-# Replace 'your_data.csv' with the path to your CSV file
-convert_to_crgb_array('image_data.csv')
+    width, height = image.size # Obtaining image dimensions
+    data = [] # Initializing a list to hold the RGB values
+
+    for y in range(height):  # Looping through each pixel in the image
+        row = []
+        for x in range(width):
+            r, g, b = image.getpixel((x, y))
+            row.append((r, g, b))
+        data.append(row)
+
+    df = pd.DataFrame(data) # Converting the list to a DataFrame
+    df.to_csv(csv_path, index=False, header=False) # Saving the DataFrame to a CSV file
+
+# Paths to the images to be loaded for conversion
+image_path_left = "left_image.jpg"
+image_path_right = "right_image.jpg"
+
+# Paths to save the CSV files with the converted RGB information
+csv_path_left = "left_image_rgb.csv"
+csv_path_right = "right_image_rgb.csv"
+
+# Saving RGB values of each image to separate CSV files
+save_rgb_to_csv(image_path_left, csv_path_left)
+save_rgb_to_csv(image_path_right, csv_path_right)
+
+csv_path_left, csv_path_right
