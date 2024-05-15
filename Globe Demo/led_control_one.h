@@ -16,26 +16,20 @@ void setupLEDs() {
     FastLED.setBrightness(BRIGHTNESS);
 }
 
-void updatePattern() {
-    static uint8_t startIndex = 0;
-    startIndex++;  // Makes the pattern move
-
-    // Defining smooth-transition colors
-    CRGB color1 = CRGB::Blue;      // Start with Blue
-    CRGB color2 = CRGB::Aqua;      // Transition to Aqua
-    CRGB color3 = CRGB::Green;     // End with Green
-
-    for (int i = 0; i < NUM_LEDS_PER_STRIP; i++) {
-        int pos = (startIndex + i) % NUM_LEDS_PER_STRIP;  // Total length of the LED strip
-
-        if (pos < (NUM_LEDS_PER_STRIP / 3)) {  // First color to second color
-            leds[i] = blend(color1, color2, pos * 3);  // Smooth blend
-        } else if (pos < (2 * NUM_LEDS_PER_STRIP / 3)) {  // Second color to third color
-            leds[i] = blend(color2, color3, (pos - NUM_LEDS_PER_STRIP / 3) * 3);  // Continue blending
-        } else {  // Third color back to first
-            leds[i] = blend(color3, color1, (pos - 2 * NUM_LEDS_PER_STRIP / 3) * 3);
-        }
-    }
+void loop() {
+  static uint8_t hue = 0;
+  // Create a rainbow that uniformly distributes itself across all LEDs
+  for (int i = 0; i < NUM_LEDS; i++) {
+    leds[i] = CHSV(hue + (i * 256 / NUM_LEDS), 255, 255);
+  }
+  FastLED.show();
+  hue++;
+  delay(20); // Adjust for speed
 }
 
-#endif // LED_CONTROL_H
+/* Testing for White Color on LEDs to determine maximum current required for the power supply
+void loop() {
+  fill_solid(leds, NUM_LEDS, CRGB::White); // Set all LEDs to white
+  FastLED.show();
+  delay(1000); // Optional delay, adjust or remove as needed
+}*/
