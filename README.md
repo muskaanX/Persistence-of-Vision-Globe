@@ -44,7 +44,7 @@ There were several issues encountered along the way due to motor failure and res
 
 <p align="center"> 
   <img src="Final Build/Image 1.jpg" width=350>
-  <img src="Final Build/Image 2.jpg" width=400> 
+  <img src="Final Build/Image 2.jpg" width=200> 
   <img src="Final Build/Image 3.jpg" width=350>
-  <img src="Final Build/Image 4.jpg" width=400> 
+  <img src="Final Build/Image 4.jpg" width=200> 
 </p>
