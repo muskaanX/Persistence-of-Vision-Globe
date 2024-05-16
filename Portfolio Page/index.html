@@ -3,34 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Project Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .welcome-section {
+            background: url('path/to/your/background-image.jpg') no-repeat center center/cover;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+        }
+        .welcome-section h1 {
+            font-size: 3em;
+            margin: 0.5em 0;
+        }
+        .welcome-section button {
+            background-color: #ff6347;
+            border: none;
+            padding: 1em 2em;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .welcome-section button:hover {
+            background-color: #e55347;
+        }
+        .content-section {
+            display: none;
+            padding: 2em;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em;
+        }
+        .grid img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#project">Project</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm a final year student of Computer Science, pursuing an Advanced Major in the same under the Postgraduate Diploma for Advanced Studies and Research from Ashoka University. I will be graduating in May 2024 with this degree and I have created this project as part of a submission for my Independent Study Module in Rapid Prototyping and Experimentation.</p>
-    </section>
-    <section id="project">
-        <h2>Project</h2>
-        <p>Details about your projects.</p>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you want to get in touch with me you can reach me via the following email: muskaanchughh@gmail.com</p>
-    </section>
-    <footer>
-        <p>&copy; 2024 Muskaan Chugh</p>
-    </footer>
+    <div class="welcome-section">
+        <h1>Welcome to my project!</h1>
+        <button onclick="showContent()">Let's Proceed</button>
+    </div>
+    <div class="content-section" id="content-section">
+        <h2>Project Demo</h2>
+        <video width="100%" controls>
+            <source src="path/to/your/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h2>Description</h2>
+        <p>Your project description here.</p>
+        <h2>Build Sketches</h2>
+        <div class="grid">
+            <!-- Placeholder for images -->
+            <img src="Sketches/image1.jpg" alt="Sketch 1">
+            <img src="Sketches/image2.jpg" alt="Sketch 2">
+            <img src="Sketches/image3.jpg" alt="Sketch 3">
+            <img src="Sketches/image4.jpg" alt="Sketch 4">
+        </div>
+        <h2>Final Build Images</h2>
+        <div class="grid">
+            <!-- Placeholder for images -->
+            <img src="Build/image1.jpg" alt="Final Build 1">
+            <img src="Build/image2.jpg" alt="Final Build 2">
+            <img src="Build/image3.jpg" alt="Final Build 3">
+            <img src="Build/image4.jpg" alt="Final Build 4">
+        </div>
+        <h2>Reach Out</h2>
+        <p>Contact me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    </div>
+    <script>
+        function showContent() {
+            document.querySelector('.welcome-section').style.display = 'none';
+            document.getElementById('content-section').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
